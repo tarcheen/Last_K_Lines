@@ -9,8 +9,6 @@ Program to read the last K line from a file
 
 using namespace std;
 
-#define LINES 6
-
 struct node
 {
     string line;    // each node will contain a line
@@ -19,6 +17,13 @@ struct node
 
 int main()
 {
+    int lines;
+    cout<<"How many lines you want ot read? ";
+    cin >> lines;
+
+    if(cin.fail())
+        return -1;
+
     ifstream rF;
     rF.open("test.txt");
 
@@ -34,7 +39,7 @@ int main()
     node* temp = nullptr;
     int count = 0;
 
-    while(count < LINES)    
+    while(count < lines)    
     {
         if(head == nullptr)
         {
@@ -72,5 +77,5 @@ int main()
         cout<<temp->line<<endl;
         temp = temp->next;
     }
-    cout<<temp->line<<endl;
+    cout<<temp->line<<endl;     // read the remaining element
 }
