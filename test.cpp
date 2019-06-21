@@ -64,7 +64,7 @@ int main()
     node* readFromhere = head;  // pointer which specifies the beginning of the read
     
     // as long as we are reading lines from the file
-    while(rF >> readLine)
+    while(getline(rF, readLine))
     {
         readFromhere->line = readLine;          // insert the line in the node
         readFromhere = readFromhere->next;      // move pointer forward
